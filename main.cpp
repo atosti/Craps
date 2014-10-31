@@ -15,12 +15,6 @@ void roll2D6(int &d1, int &d2){
     d2 = rollD6();
     return;
 }
-bool pointOn(int sum){
-    if((point(sum) == -1){ //if point returns -1 flag, then the point is off
-	 return false;
-    }
-    return true; //Else point is On with a valid value, return true
-}
 
 int point(int sum){ //takes in sum of the last dice roll while point was OFF
     if( (sum == 4) || (sum == 5) || (sum == 6) ||
@@ -28,6 +22,13 @@ int point(int sum){ //takes in sum of the last dice roll while point was OFF
 	return sum; //Point is a valid num, return that num back
 	}
     return -1; //Point is not a valid num, return -1 to signify point is Black(OFF)
+}
+
+bool pointOn(int sum){
+    if((point(sum) == -1)){ //if point returns -1 flag, then the point is off
+	 return false;
+    }
+    return true; //Else point is On with a valid value, return true
 }
 
 int main(){
